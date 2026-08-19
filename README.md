@@ -28,7 +28,7 @@ The main questions behind the analysis were:
 
 ## Dashboard Preview
 
-!([images/OTT.png](https://github.com/jannatchugh01/jannatchugh01.github.io/blob/main/images/OTT.png))
+![images/OTT.png](https://github.com/jannatchugh01/jannatchugh01.github.io/blob/main/images/OTT.png)
 
 > If the PDF preview does not render correctly on GitHub, use the exported dashboard image instead.
 
