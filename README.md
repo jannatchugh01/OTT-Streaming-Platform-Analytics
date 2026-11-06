@@ -4,7 +4,7 @@ A Power BI project analysing two streaming platforms, **LioCinema** and **Jotsta
 
 > Lio, LioCinema and Jotstar are fictional. The scenario comes from the Codebasics Resume Project Challenge.
 
-![Dashboard preview](images/OTT.png)
+![Dashboard preview](https://github.com/jannatchugh01/jannatchugh01.github.io/blob/main/images/OTT.png)
 
 ---
 
