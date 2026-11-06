@@ -1,185 +1,86 @@
-# Lio-Jotstar OTT Platform Analytics
+# Lio–Jotstar OTT Analytics | Power BI
 
-A **Power BI-based customer and content analytics project** built to evaluate the performance of two fictional OTT platforms, **LioCinema and Jotstar**, before a proposed merger.
+A Power BI project analysing two streaming platforms, **LioCinema** and **Jotstar**, ahead of a proposed merger. Using subscriber, content, engagement and subscription data from **January to November 2024**, I looked at where the combined platform is strong, where it is leaking users, and what to fix first.
 
-The analysis looks at subscriber growth, content consumption, inactive users, subscription behavior, and user engagement to understand where the combined platform could improve retention and growth.
+> Lio, LioCinema and Jotstar are fictional. The scenario comes from the Codebasics Resume Project Challenge.
 
-> **Note:** Lio, LioCinema, and Jotstar are fictional entities created for the Codebasics Resume Project Challenge.
-
----
-
-## Business Problem
-
-Lio, a leading telecommunications provider, is planning a merger with Jotstar, an OTT streaming platform.
-
-Before moving forward with the merger, management wants to understand how both platforms performed between **January and November 2024**.
-
-The main questions behind the analysis were:
-
-* How are subscribers growing across the two platforms?
-* Which platform has stronger subscriber engagement?
-* What types of content are being consumed the most?
-* Which users are becoming inactive?
-* How do users move between subscription plans?
-* Which demographic and subscription segments show stronger engagement?
-* What opportunities could improve retention and growth after the merger?
+![Dashboard preview](images/OTT.png)
 
 ---
 
-## Dashboard Preview
+## The Business Problem
 
-![images/OTT.png](https://github.com/jannatchugh01/jannatchugh01.github.io/blob/main/images/OTT.png)
+Lio, a telecom provider, plans to merge with Jotstar, an OTT platform. Before the deal, management wanted answers to a few practical questions:
 
-> If the PDF preview does not render correctly on GitHub, use the exported dashboard image instead.
+- How are subscribers growing on each platform?
+- Which platform keeps its users more engaged?
+- What content is actually being watched?
+- Who is going inactive, and why might that be?
+- How do users move between subscription plans?
 
----
+## Headline Findings
 
-## Tools Used
+| Metric | LioCinema | Jotstar |
+|---|---|---|
+| Total users | 183.45K | 44.62K |
+| Active rate | 55.1% | 85.1% |
+| Inactive users | 82.31K (44.9%) | 6.65K (14.9%) |
+| Paid users | 78.45K (42.8%) | 33K (72.9%) |
+| Avg. watch time per user | 25.61 hrs | 117.24 hrs |
+| Total watch time | 11.03M hrs | 15.69M hrs |
+| Content library | 1.25K titles | 2.36K titles |
+| Users who changed plan | 13.64% | 15.89% |
 
-* **Power BI** — dashboard development, visualization and analysis
-* **Excel** — data preparation and initial analysis
-* **Data Cleaning** — preparing the source data for analysis
-* **Power BI / DAX** — calculated metrics and analytical measures
-* **GitHub** — project documentation and version control
+**1. LioCinema has the reach, Jotstar has the engagement.**
+LioCinema accounts for about 80% of combined users, yet Jotstar's much smaller base generates more total watch time (15.69M vs 11.03M hrs). Jotstar users watch roughly 4.6x more per head.
 
----
+**2. Inactivity on LioCinema is a free-plan problem.**
+57% of LioCinema's free users are inactive, against 33.8% on Basic and 17.9% on Premium. Free users also make up the largest share of its base (105K of 183K). Jotstar's inactivity is much lower across the board, from 6.7% on Premium to 25.7% on Free.
 
-# Analytical Approach
+**3. LioCinema loses far more users to downgrades than it gains from upgrades.**
+About 20.86K users downgraded against 4.16K who upgraded. The biggest flows were Basic to Free (10.3K) and Premium to Free (7.4K). Jotstar tells the opposite story: upgrades (4.35K) outnumber downgrades (about 2.7K), led by VIP to Premium (2.8K).
 
-I structured the analysis around four main areas of the OTT business:
+**4. The two platforms reach different audiences.**
+LioCinema is concentrated in Tier 3 cities (79K users) and the 18-24 age group (80K). Jotstar leans towards Tier 1 (25K) and the 25-34 group (20K). Engagement follows the same pattern, with Tier 1 and younger users watching the most on both platforms.
 
-### 1. Content & Library Analysis
+**5. Mobile drives viewing.**
+Jotstar users average 176 hrs on mobile versus 95 on TV and 81 on laptop. LioCinema shows the same ordering at a much lower level (46, 13 and 8 hrs).
 
-Compared the content libraries of LioCinema and Jotstar to understand:
+**6. Growth patterns differ.**
+Jotstar adds a steady ~4K users every month. LioCinema's acquisition is spiky, peaking at 37K in February and 29K in September, with some months as low as 7K, which suggests campaign-driven rather than organic growth.
 
-* Content availability
-* Content categories
-* Platform-wise distribution
-* Differences in the content mix
+**7. The content mix differs.**
+Jotstar's library is half movies (50%), 35% series and 15% sports. LioCinema is 72% movies, 24% series and only 4% sports. Jotstar's top genres are Action, Drama and Thriller, with Live Matches fourth. LioCinema's lead with Drama, then Comedy and Action.
 
-### 2. Subscriber Analysis
+## What I'd Recommend
 
-Examined subscriber growth and user characteristics across both platforms.
+- **Treat LioCinema's free tier as a retention priority.** More than half of these users are inactive. Onboarding nudges, personalised recommendations and a clearer reason to stay would matter more than another acquisition push.
+- **Investigate the downgrade flow.** Over 17K users dropped to Free from Basic or Premium. Pricing, content gaps and plan benefits should be reviewed before the plans are merged.
+- **Use Jotstar's engagement playbook.** Its higher watch time sits alongside a large sports and series library, which LioCinema lacks.
+- **Make mobile the primary experience** on the combined platform.
+- **Smooth out acquisition.** Replace one-off spikes with steadier, targeted campaigns by city tier and age group.
 
-The analysis included:
+## Analysis Structure
 
-* Subscriber acquisition
-* Demographic segmentation
-* User distribution
-* Platform comparison
+1. **Subscriber analysis**: growth by month, plan mix, city tier and age group, active vs inactive, paid vs free
+2. **Content consumption**: watch time by age, tier, device, plan and month
+3. **Content library**: titles by type, genre and language, with runtimes
+4. **Upgrades and downgrades**: monthly trends and plan-to-plan transitions
 
-### 3. Inactivity & Engagement Analysis
+Every page has slicers for age group, month and city tier.
 
-Looked at users who were not actively engaging with the platforms.
+## Tools
 
-The analysis considered:
+- **Power BI Desktop**: data modelling, DAX measures (active rate, paid rate, plan change %, watch time averages), dashboard design
+- **Excel**: initial data preparation and checks
+- **GitHub**: project documentation
 
-* Inactive subscriber patterns
-* Age-group differences
-* Subscription-plan differences
-* Watch-time behavior
-* Engagement levels
-
-### 4. Subscription Behavior
-
-Analyzed how users interact with different subscription plans, including:
-
-* Upgrades
-* Downgrades
-* Subscription lifecycle
-* Differences across user segments
-
----
-
-# Key Business Questions
-
-Rather than looking at individual charts in isolation, the dashboard was designed to answer questions such as:
-
-| Business Question                  | Analysis                                  |
-| ---------------------------------- | ----------------------------------------- |
-| Which platform is growing faster?  | Subscriber growth comparison              |
-| Which users are most engaged?      | Watch-time and engagement analysis        |
-| Who is becoming inactive?          | Inactivity by demographics and plans      |
-| What content is performing well?   | Content category and consumption analysis |
-| How do users change plans?         | Upgrade and downgrade analysis            |
-| Where are retention opportunities? | Segment-level inactivity and engagement   |
-
----
-
-# Key Insights
-
-The analysis highlighted several areas that could influence the merger strategy.
-
-### Subscriber Behavior
-
-Subscriber growth and user distribution were compared across both platforms to identify differences in their customer bases and growth patterns.
-
-### Engagement
-
-Watch-time and content consumption patterns were used to identify segments showing stronger engagement and areas where engagement could be improved.
-
-### Inactive Users
-
-Inactivity was analyzed across age groups and subscription plans to identify segments that may require targeted retention strategies.
-
-### Subscription Movement
-
-Upgrade and downgrade behavior provided insight into how users interact with different subscription plans and where the subscription structure may be creating friction.
-
-### Content Strategy
-
-Comparing content categories and consumption patterns helped identify areas where the combined platform could focus its content strategy.
-
----
-
-# Business Recommendations
-
-Based on the analysis, the following areas could be considered after the merger:
-
-### Improve retention of inactive users
-
-Identify high-inactivity segments and use targeted offers, personalized content recommendations, or re-engagement campaigns rather than treating all inactive users the same way.
-
-### Strengthen high-performing content categories
-
-Use consumption patterns to prioritize content categories that consistently attract stronger engagement.
-
-### Review subscription plans
-
-Analyze downgrade behavior to understand whether pricing, plan benefits, or content availability could be contributing to plan movement.
-
-### Personalize the user experience
-
-Use viewing behavior, demographics, and subscription information to create more relevant content recommendations and targeted campaigns.
-
-### Focus on high-growth segments
-
-Use subscriber and engagement trends to identify customer segments with stronger growth potential and prioritize acquisition and retention efforts accordingly.
-
----
-
-# Dashboard Sections
-
-The Power BI report brings the analysis together through different views covering:
-
-* **Subscriber Growth**
-* **Content Library**
-* **Content Consumption**
-* **User Engagement**
-* **Inactive Subscribers**
-* **Subscription Upgrades & Downgrades**
-* **Demographic Analysis**
-* **Platform Comparison**
-
----
-
-# Project Files
+## Repository Contents
 
 ```text
 OTT-Streaming-Platform-Analytics/
-│
-├── OTT analysis.pbix
-├── OTT analysis.pdf
+├── OTT analysis.pbix                    # Power BI report
+├── OTT analysis.pdf                     # Exported dashboard
 ├── Metrics & Analysis.pdf
 ├── primary_and_secondary_questions.pdf
 ├── problem_statement.pdf
@@ -187,42 +88,12 @@ OTT-Streaming-Platform-Analytics/
 └── README.md
 ```
 
----
+## What I Took From This Project
 
-# What I Worked On
-
-This project helped me practice the type of analysis commonly used in **customer and product analytics**.
-
-The main areas I worked on were:
-
-* Cleaning and preparing analytical data
-* Building Power BI dashboards
-* Creating business-focused metrics
-* Segmenting users based on behavior
-* Comparing subscriber and engagement patterns
-* Analyzing subscription movement
-* Translating dashboard findings into business recommendations
+This was good practice in turning dashboards into a business argument rather than a set of charts. The most useful part was comparing two very different platforms on the same metrics and finding that size and engagement told opposite stories.
 
 ---
-
-# Skills Demonstrated
-
-**Power BI • DAX • Excel • Data Cleaning • Customer Analytics • Product Analytics • Exploratory Data Analysis • Data Visualization • Business Intelligence • Data Storytelling**
-
----
-
-# Challenge Context
-
-This project was completed as part of the **Codebasics Resume Project Challenge**.
-
-The challenge uses a fictional OTT merger scenario to simulate a real business analytics problem and requires the analysis to be presented from a management decision-making perspective.
-
----
-
-## Author
 
 **Jannat Chugh**
-
 B.Tech ECE-AI | Data Analytics & Data Science
-
 [GitHub](https://github.com/jannatchugh01) • [Portfolio](https://jannatchugh01.github.io/)
